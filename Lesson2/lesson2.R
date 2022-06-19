@@ -2,11 +2,11 @@
 # Curso: Data Analytis
 # Nombre: Kenyi Hancco
 # Fecha: 19/16/2022
-# Tema: Introducción a herramientas básicas de R
+# Tema: Manejo y transformacion de datos
 #========================================================
 
 #=========================================
-# 1. Ubicarnos en el directorio de trabajo
+# Ubicarnos en el directorio de trabajo
 #=========================================
 
 # Crear un directorio de trabajo y las guardas en una variable
@@ -24,6 +24,30 @@ setwd(mac_dir) # Recibe como parametro la nueva ruta
 
 getwd() # Verificamos nuevamente nuestra ruta de trabajo
 
+
+#====================================
+# 1. Manipulacion de datos con dplyr
+#====================================
+
+# install.packages("dplyr") # Instalar el paquete dplyr
+library(dplyr) # Importar el paquete dplyr
+
+sessionInfo() # Verificar la version de R
+
+library(help=dplyr) # Verificar la version de dplyr
+
+# Cargar el archivo de base de datos
+
+install.packages("ggplot2movies") # Instalar el paquete ggplot2movies
+library(ggplot2movies) # Importar el paquete ggplot2movies
+library(help=ggplot2movies) # Verificar la version de ggplot2movies
+
+data(movies) # Cargar el archivo de base de datos
+
+
+#====================
+# 1.1. Comando Select
+#====================
 
 
 
