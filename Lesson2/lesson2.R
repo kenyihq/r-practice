@@ -81,3 +81,13 @@ mov13 <- filter(mov, year %in% c(2002, 2003) & length > 120) # Seleccionar los r
 mov14 <- filter(mov, year %in% c(2002, 2003) & length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002 o 2003, la duracion mayor a 120 minutos y el rating mayor a 7
 mov15 <- filter(mov, year %in% c(2002, 2003) | length > 120) # Seleccionar los registros que tengan el año 2002 o 2003 o la duracion mayor a 120 minutos
 mov16 <- filter(mov, year %in% c(2002, 2003) | length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002 o 2003 o la duracion mayor a 120 minutos y el rating mayor a 7
+
+
+#=====================
+# 1.4 Comando mutate
+#=====================
+
+mov17 <- mutate(mov, ratio=rating/votes) # Mutar los campos que se requieren
+mov18 <- mutate(mov, rating_level=ifelse(rating > 6, "Buena", "Mala")) # Mutar los campos que se requieren
+mov19 <- mutate(mov, rating_level=case_when(
+    rating <= 3 ~ "Malo", rating <= 6 ~ "Regular", rating > 6 ~ "Buena")) # Mutar los campos que se requieren
