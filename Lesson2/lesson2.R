@@ -107,3 +107,33 @@ mov21 <- mutate(mov20, rating_level2=fct_collapse(rating_level,
                                                     Regular=c("Malo", "Regular"),
                                                     Optimo=("Buena"))) # Recodificamos el rating_level
 
+
+class(mov21$rating_level) # Verificar el tipo de dato del campo rating_level
+class(mov21$rating_level2) # Verificar el tipo de dato del campo recodificado
+
+mov21 <- mutate(mov21, rating_level=as.factor(rating_level)) # Convertir el campo rating_level en factor
+
+#=====================
+# 1.5 Comando arrange
+#=====================
+help(arrange) # Verificar la ayuda del comando arrange
+
+mov22 <- arrange(mov, rating_level) # Ordenar el campo rating_level
+mov23 <- arrange(mov, year) # Ordenar el campo year
+mov24 <- arrange(mov, -year) # Ordenar el campo year de forma descendente
+
+
+#======================
+# 1.6 Comando summarise
+#======================
+help(summarise) # Verificar la ayuda del comando summarise
+
+summarise(mov21,
+        promedio=mean(rating),
+        desviacion=sd(rating),
+        minimo=min(rating),
+        maximo=max(rating),
+        cantidad=nrow(mov),
+        cantidad_buena=nrow(filter(mov, rating_level == "Buena")),
+        cantidad_mala=nrow(filter(mov, rating_level == "Mala")),
+        cantidad_regular=nrow(filter(mov, rating_level == "Regular"))) # Sumarizar los campos que se requieren
