@@ -16,7 +16,12 @@ estudia <-c("si", "no", "no", "si", "no")
 
 # Cambiar directorio de trabajo
 getwd() # Permite saber nuestra ruta actual de trabajo
+
+# Windows
 setwd("D:/Data Sciencie/Diplomado DS for Bussines/R/Lesson2") # Recibe como parametro la nueva ruta
+
+# MacOs
+setwd("/Users/kenyihq/Development/Data-Sciencie/Diplomado-DS-GEM/R/r-practice/Lesson2") # Recibe como parametro la nueva ruta
 getwd() # Verificamos nuevamente nuestra ruta de trabajo
 
 # Tipo de datos
