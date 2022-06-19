@@ -86,8 +86,24 @@ mov16 <- filter(mov, year %in% c(2002, 2003) | length > 120 & rating > 7) # Sele
 #=====================
 # 1.4 Comando mutate
 #=====================
+help(mutate) # Verificar la ayuda del comando mutate
 
 mov17 <- mutate(mov, ratio=rating/votes) # Mutar los campos que se requieren
 mov18 <- mutate(mov, rating_level=ifelse(rating > 6, "Buena", "Mala")) # Mutar los campos que se requieren
 mov19 <- mutate(mov, rating_level=case_when(
-    rating <= 3 ~ "Malo", rating <= 6 ~ "Regular", rating > 6 ~ "Buena")) # Mutar los campos que se requieren
+                                            rating <= 3 ~ "Malo",
+                                            rating <= 6 ~ "Regular",
+                                            rating > 6 ~ "Buena")) # Mutar los campos por rating
+mov20 <- mutate(mov, rating_level=case_when(
+                                            rating <= 3 ~ "Malo",
+                                            rating <= 6 ~ "Regular",
+                                            TRUE ~ "Buena")) # Mutar los campos por rating
+
+
+install.packages("forcats") # Instalar el paquete forcats
+library(forcats) # Importar el paquete forcats
+
+mov21 <- mutate(mov20, rating_level2=fct_collapse(rating_level,
+                                                    Regular=c("Malo", "Regular"),
+                                                    Optimo=("Buena"))) # Recodificamos el rating_level
+
