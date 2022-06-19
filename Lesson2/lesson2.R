@@ -65,11 +65,23 @@ help(slice) # Verificar la ayuda del comando slice
 mov6 <- slice(mov, 1:10) # Seleccionar los primeros 10 registros
 mov7 <- slice_sample(mov, n=10) # Seleccionar los primeros 10 registros de forma aleatoria
 
+# Practica, seleccionar los primeros 10 registros de forma aleatoria y mostrar el titulo de cada uno
+select(mov7, Pelicula=title, Anio=year, Duracion=length, Rating=rating, Votos=votes) # Seleccionar los campos que se requieren
+
+#=====================
+# 1.3 Comando filter
+#=====================
+help(filter) # Verificar la ayuda del comando filter
+mov8 <- filter(mov, year ==2002) # Seleccionar los registros que tengan el año 2002
+mov9 <- filter(mov, year ==2002 & length > 120) # Seleccionar los registros que tengan el año 2002 y la duracion mayor a 120 minutos
+mov10 <- filter(mov, year ==2002 & length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002, la duracion mayor a 120 minutos y el rating mayor a 7
+mov11 <- filter(mov, year == 2002 | length > 120) # Seleccionar los registros que tengan el año 2002 o la duracion mayor a 120 minutos
 
 
-# Practice
 
-select(mov7, Pelicula=title, Anio=year, Duracion=length, Rating=rating, Votos=votes)
+
+
+
 
 
 
