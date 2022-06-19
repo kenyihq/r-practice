@@ -76,23 +76,8 @@ mov8 <- filter(mov, year ==2002) # Seleccionar los registros que tengan el año 
 mov9 <- filter(mov, year ==2002 & length > 120) # Seleccionar los registros que tengan el año 2002 y la duracion mayor a 120 minutos
 mov10 <- filter(mov, year ==2002 & length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002, la duracion mayor a 120 minutos y el rating mayor a 7
 mov11 <- filter(mov, year == 2002 | length > 120) # Seleccionar los registros que tengan el año 2002 o la duracion mayor a 120 minutos
-
-
-
-
-
-
-
-
-
-
-
-
-# Ciclo para recorrer una lista de directorios
-
-v1 <- list(1:20)
-
-for(i in v1){
-    print(i)
-    }
-
+mov12 <- filter(mov, year %in% c(2002, 2003)) # Seleccionar los registros que tengan el año 2002 o 2003
+mov13 <- filter(mov, year %in% c(2002, 2003) & length > 120) # Seleccionar los registros que tengan el año 2002 o 2003 y la duracion mayor a 120 minutos
+mov14 <- filter(mov, year %in% c(2002, 2003) & length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002 o 2003, la duracion mayor a 120 minutos y el rating mayor a 7
+mov15 <- filter(mov, year %in% c(2002, 2003) | length > 120) # Seleccionar los registros que tengan el año 2002 o 2003 o la duracion mayor a 120 minutos
+mov16 <- filter(mov, year %in% c(2002, 2003) | length > 120 & rating > 7) # Seleccionar los registros que tengan el año 2002 o 2003 o la duracion mayor a 120 minutos y el rating mayor a 7
